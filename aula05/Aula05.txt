@@ -22,3 +22,7 @@ GitHub Branch/Main
 	git checkout main
 12. Voltar para a branch desejada:
 	git checkout teste/leticia-glendy
+13. Merge/ em Compare & pull request clicar
+14. Em Add a title:
+	Alteração no txt e criação do readme na pasta aula05
+	
