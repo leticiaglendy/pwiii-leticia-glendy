@@ -10,3 +10,15 @@ GitHub Branch/Main
 6. comando: 
 	git checkout -b front/muda-cor-botão
 	git checkout -b teste/leticia-glendy
+7.Alteração no arquivo README.md
+8. comando na pasta/local desejada:
+	git status
+	add add .
+9. como fazer o comando numa branch:
+	git push --set-upstream origin teste/leticia-glendy
+10. ver/puxar as alterações criadas no projeto/repositorio:
+	git pull
+11. voltar de uma Branch ao Main:
+	git checkout main
+12. Voltar para a branch desejada:
+	git checkout teste/leticia-glendy
