@@ -2,6 +2,11 @@ Aula05
 
 GitHub Branch/Main
 
-* usuário do amigo no GitHub
-* convidar para o repositório
-* 
+1. usuário do amigo no GitHub
+2. convidar para o repositório
+3. não é possível subir a pasta vazia no repositório
+4. clonar o repositório que foi convidado
+5. Projeto <Main> é onde tudo que já está pronto é enviado(principal), se cria uma cópia que representa(homologação) e para o ambiente de desenvolvimento existe uma outra cópia onde pode ser criada as <branch>
+6. comando: 
+	git checkout -b front/muda-cor-botão
+	git checkout -b teste/leticia-glendy
