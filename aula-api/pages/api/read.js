@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   
     const connection = await connectToDatabase();
 
-    const [rows] = await connection.execute('SELECT * FROM users WHERE id = 1');
+    const [rows] = await connection.execute('SELECT * FROM users WHERE id = 2');
 
     if (rows.length === 0) {
       return res.status(404).json({ error: 'Usuário não encontrado.' });
