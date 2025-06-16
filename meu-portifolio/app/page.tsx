@@ -17,20 +17,17 @@ export default function Home() {
       </Head>
 
       <section id="sobre" className="flex flex-col items-center justify-center py-20 px-4 text-center space-y-6">
-        <h1 className={`text-4xl md:text-6xl font-bold text-blue-400 ${orbitron.className}`}>Explorando o Universo do Código</h1>
+        <h1 className={`text-4xl md:text-6xl font-bold text-blue-400 ${orbitron.className}`}>Olá, eu sou Leticia</h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-xl">
-          Sou um desenvolvedor web e mobile em missão constante para aprender e criar soluções que impactam.
+          Sou uma desenvolvedora web e mobile em missão constante para aprender e criar soluções que impactam.
         </p>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl text-lg shadow-md">
-          Ver Projetos <Rocket className="ml-2 h-5 w-5" />
-        </Button>
       </section>
 
       <section id="projetos" className="px-6 py-12 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">Projetos em Órbita</h2>
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">Projetos</h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {[1, 2].map((n) => (
+          {[1, 2, 3].map((n) => (
             <Card key={n} className="bg-[#14163A] border-none shadow-lg">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-blue-300 mb-2">Projeto {n}</h3>
@@ -59,7 +56,7 @@ export default function Home() {
           <p className="text-gray-300 text-lg mb-6">
             Para entrar em contato, envie um e-mail para:
             <a href="mailto:seuemail@example.com" className="text-blue-400 underline ml-2">
-              seuemail@example.com
+              ltcglendy@gmail.com
             </a>
           </p>
 
@@ -78,7 +75,7 @@ export default function Home() {
       </section>
 
       <footer className="text-center text-sm text-gray-500 py-6">
-        Feito com ☄️ por [Seu Nome] — 2025
+        Feito com ☄️ por Leticia Glendy — 2025
       </footer>
     </main>
   )
