@@ -8,6 +8,31 @@ import Sidebar from './components/Sidebar'
 
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['600'] })
 
+const projetos = [
+  {
+    id: 1,
+    titulo: "Projeto Astro",
+    descricao: "Um site com tema espacial, usando Next.js e Tailwind.",
+    linkCodigo: "https://github.com/seuusuario/projeto-astro",
+    linkOnline: "https://projeto-astro.vercel.app",
+  },
+  {
+    id: 2,
+    titulo: "App Mobile Galaxy",
+    descricao: "Aplicativo React Native com design futurista e funcionalidades de navegação.",
+    linkCodigo: "https://github.com/seuusuario/app-mobile-galaxy",
+    linkOnline: "https://expo.dev/@seuusuario/app-mobile-galaxy",
+  },
+  {
+    id: 3,
+    titulo: "Dashboard SpaceX",
+    descricao: "Dashboard para visualizar dados de missões espaciais com gráficos dinâmicos.",
+    linkCodigo: "https://github.com/seuusuario/dashboard-spacex",
+    linkOnline: "https://dashboard-spacex.vercel.app",
+  },
+]
+
+
 export default function Home() {
   return (
     <main className="pl-48 pt-10 bg-[#0B0C2A] text-white min-h-screen">
@@ -24,27 +49,41 @@ export default function Home() {
       </section>
 
       <section id="projetos" className="px-6 py-12 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">Projetos</h2>
+  <h2 className="text-3xl font-bold text-white mb-8 text-center">Projetos</h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {[1, 2, 3].map((n) => (
-            <Card key={n} className="bg-[#14163A] border-none shadow-lg">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-blue-300 mb-2">Projeto {n}</h3>
-                <p className="text-gray-400 mb-4">Descrição breve do projeto {n}, explicando o que ele faz e quais tecnologias usa.</p>
-                <div className="flex space-x-4">
-                  <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white">
-                    Ver Código <Github className="ml-2 h-4 w-4" />
-                  </Button>
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                    Ver Online <Rocket className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+  <div className="grid md:grid-cols-2 gap-6">
+    {projetos.map(({ id, titulo, descricao, linkCodigo, linkOnline }) => (
+      <Card key={id} className="bg-[#14163A] border-none shadow-lg">
+        <CardContent className="p-6">
+          <h3 className="text-xl font-semibold text-blue-300 mb-2">{titulo}</h3>
+          <p className="text-gray-400 mb-4">{descricao}</p>
+          <div className="flex space-x-4">
+            <Button
+              variant="outline"
+              className="border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white"
+              as="a"
+              href={linkCodigo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Código <Github className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              className="bg-purple-600 hover:bg-purple-700 text-white"
+              as="a"
+              href={linkOnline}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Online <Rocket className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
+
 
       <section id="contato" className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
@@ -64,7 +103,7 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/seuusuario" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-7 h-7 text-gray-300 hover:text-blue-400 transition-colors" />
             </a>
-            <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/leticiaglendy" target="_blank" rel="noopener noreferrer">
               <Github className="w-7 h-7 text-gray-300 hover:text-blue-400 transition-colors" />
             </a>
             <a href="https://www.instagram.com/seuusuario" target="_blank" rel="noopener noreferrer">

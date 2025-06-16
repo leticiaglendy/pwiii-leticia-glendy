@@ -4,3 +4,22 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: radial-gradient(circle at top, #0B0C2A 0%, #050518 100%);
+  color: white;
+  overflow-x: hidden;
+}
+
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
