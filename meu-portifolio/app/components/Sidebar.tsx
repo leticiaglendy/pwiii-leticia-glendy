@@ -1,7 +1,8 @@
-import { User, Folder, Mail } from 'lucide-react';
+import { User, Folder, Mail, Wrench } from 'lucide-react';
 
 const sections = [
   { href: '#sobre', label: 'Sobre', icon: <User className="w-5 h-5" /> },
+  { href: '#tecnologias', label: 'Tecnologias', icon: <Wrench className="w-5 h-5" /> },
   { href: '#projetos', label: 'Projetos', icon: <Folder className="w-5 h-5" /> },
   { href: '#contato', label: 'Contato', icon: <Mail className="w-5 h-5" /> }
 ];
