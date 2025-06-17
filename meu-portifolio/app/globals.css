@@ -16,10 +16,12 @@ body {
   background: white;
   border-radius: 50%;
   position: absolute;
-  animation: twinkle 2s infinite ease-in-out;
+  animation: twinkle 3s infinite ease-in-out;
+  z-index: 1;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
+  0% { opacity: 0.3; }
   50% { opacity: 1; }
+  100% { opacity: 0.3; }
 }

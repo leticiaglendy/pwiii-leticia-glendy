@@ -4,39 +4,45 @@ import { Button } from './components/ui/Button'
 import { Github, Rocket, Mail, Linkedin, Instagram, Wrench } from 'lucide-react'
 import Head from 'next/head'
 import Sidebar from './components/Sidebar'
+import { ScrollToTopButton } from './components/ScrollToTopButton'
 
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['600'] })
 
 const projetos = [
   {
     id: 1,
-    titulo: "Projeto Astro",
-    descricao: "Um site com tema espacial, usando Next.js e Tailwind.",
-    linkCodigo: "https://github.com/seuusuario/projeto-astro",
+    titulo: "App Mobile Stickersmash",
+    descricao: "Um app feito com React Native (com expo)",
+    linkCodigo: "https://github.com/leticiaglendy/pamii-leticia-glendy/tree/main/StickerSmash",
+    linkOnline: "",
   },
   {
     id: 2,
-    titulo: "App Mobile Galaxy",
-    descricao: "Aplicativo React Native com design futurista e funcionalidades de navegação.",
-    linkCodigo: "https://github.com/seuusuario/app-mobile-galaxy",
-    linkOnline: "https://expo.dev/@seuusuario/app-mobile-galaxy",
+    titulo: " Projeto Letras de Músicas",
+    descricao: "Site desenvolvido com Html, CSS e Javascript. Com tema vintage, letras de músicas e notícias",
+    linkCodigo: "https://github.com/leticiaglendy/projeto-pw1-site",
+    linkOnline: "",
   },
   {
     id: 3,
-    titulo: "Dashboard SpaceX",
-    descricao: "Dashboard para visualizar dados de missões espaciais com gráficos dinâmicos.",
-    linkCodigo: "https://github.com/seuusuario/dashboard-spacex",
-    linkOnline: "https://dashboard-spacex.vercel.app",
+    titulo: "Projeto Papelaria",
+    descricao: "Site de uma papelaria criado com Laravel, Bootstrap e PHP",
+    linkCodigo: "https://github.com/leticiaglendy/PW2/tree/main/aula",
+    linkOnline: "",
   },
 ]
 
 export default function Home() {
   return (
-    <main className="pl-48 pt-10 bg-[#0B0C2A] text-white min-h-screen">
+    <main className="pt-10 bg-[#0B0C2A] text-white min-h-screen lg:pl-48">
       <Sidebar />
       <Head>
-        <title>Portfólio</title>
+        <title>Portfólio | Leticia Glendy</title>
+        <meta name="description" content="Portfólio de Leticia Glendy - Desenvolvedora web e mobile, apaixonada por tecnologia e aprendizado constante." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
       </Head>
+
 
       <section
         id="sobre"
@@ -55,24 +61,34 @@ export default function Home() {
 
       <section
         id="tecnologias"
-        className="py-20 max-w-5xl mx-auto px-6 text-center space-y-6"
+        className="py-20 max-w-5xl mx-auto px-6 text-center space-y-10"
       >
-        <h2 className="text-3xl font-bold text-blue-300 flex items-center justify-center gap-2 mb-6">
-          <Wrench className="w-6 h-6" />
+        <h2 className="text-3xl font-bold text-blue-300 flex items-center justify-center gap-3 mb-12">
           Tecnologias que utilizo
         </h2>
-        
-        <ul className="text-lg md:text-xl text-gray-300 max-w-xl mx-auto text-left">
-          <li>🔹 React Native (com Expo)</li>
-          <li>🔹 Laravel (PHP)</li>
-          <li>🔹 Node.js (Express)</li>
-          <li>🔹 MySQL</li>
-          <li>🔹 HTML, CSS e JavaScript</li>
-          <li>🔹 TypeScript</li>
-          <li>🔹 Consumo de APIs REST</li>
-          <li>🔹 Git e GitHub</li>
-        </ul>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto text-left">
+          {[
+            "React Native (com Expo)",
+            "Laravel (PHP)",
+            "Node.js (Express)",
+            "MySQL",
+            "HTML, CSS e JavaScript",
+            "TypeScript",
+            "Consumo de APIs REST",
+            "Git e GitHub",
+          ].map((tech) => (
+            <div
+              key={tech}
+              className="flex items-center gap-3 bg-[#14163A] rounded-lg p-4 shadow-md hover:shadow-blue-500 transition-shadow cursor-default"
+            >
+              <span className="text-blue-400 text-xl select-none">🔹</span>
+              <span className="text-gray-300 text-lg">{tech}</span>
+            </div>
+          ))}
+        </div>
       </section>
+
 
       <section id="projetos" className="py-20 max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-blue-300 flex items-center justify-center gap-2 mb-6">
@@ -81,7 +97,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {projetos.map(({ id, titulo, descricao, linkCodigo, linkOnline }) => (
-            <Card key={id} className="bg-[#14163A] border-none shadow-lg">
+            <Card key={id} className="bg-[#14163A] border-none shadow-md hover:shadow-blue-500 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-blue-300 mb-2">
                   {titulo}
@@ -120,10 +136,9 @@ export default function Home() {
 
       <section
         id="contato"
-        className="py-20 max-w-5xl mx-auto px-6 text-center space-y-6"
+        className="py-20 max-w-5xl mx-auto px-6 text-center space-y-10"
       >
         <h2 className="text-3xl font-bold text-blue-300 flex items-center justify-center gap-2 mb-6">
-          <Mail className="w-6 h-6 text-blue-400" />
           Contato
         </h2>
 
@@ -139,7 +154,7 @@ export default function Home() {
 
         <div className="flex gap-6 items-center justify-center">
           <a
-            href="https://www.linkedin.com/in/seuusuario"
+            href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -153,7 +168,7 @@ export default function Home() {
             <Github className="w-7 h-7 text-gray-300 hover:text-blue-400 transition-colors" />
           </a>
           <a
-            href="https://www.instagram.com/seuusuario"
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -161,6 +176,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <ScrollToTopButton />
 
       <footer className="text-center text-sm text-gray-500 py-6">
         Feito com ☄️ por Leticia Glendy — 2025

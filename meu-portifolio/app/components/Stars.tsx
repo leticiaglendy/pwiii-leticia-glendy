@@ -6,14 +6,29 @@ export default function Stars() {
   const [stars, setStars] = useState<{ top: number; left: number }[]>([])
 
   useEffect(() => {
-    const tempStars = []
-    for (let i = 0; i < 100; i++) {
-      tempStars.push({
-        top: Math.random() * window.innerHeight,
-        left: Math.random() * window.innerWidth,
-      })
+    const generateStars = () => {
+      const pageHeight = document.body.scrollHeight
+      const pageWidth = window.innerWidth
+      const tempStars = []
+
+      for (let i = 0; i < 150; i++) {
+        tempStars.push({
+          top: Math.random() * pageHeight,
+          left: Math.random() * pageWidth,
+        })
+      }
+
+      setStars(tempStars)
     }
-    setStars(tempStars)
+
+    generateStars()
+
+    // Opcional: Regenerar estrelas se a pessoa redimensionar a janela
+    window.addEventListener('resize', generateStars)
+
+    return () => {
+      window.removeEventListener('resize', generateStars)
+    }
   }, [])
 
   return (
